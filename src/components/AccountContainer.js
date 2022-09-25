@@ -27,7 +27,7 @@ function AccountContainer() {
     })
       .then((r) => r.json())
       .then((newTransaction) => {
-        setTransactions([...transactions, newTransaction]);
+        setTransactions([newTransaction,...transactions ]);
       }
     );
     

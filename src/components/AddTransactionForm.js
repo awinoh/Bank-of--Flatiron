@@ -14,7 +14,7 @@ function AddTransactionForm({handleAddTransaction}) {
       amount,
       date,
     };
-    console.log (newTransaction)
+    // console.log (newTransaction)
     handleAddTransaction(newTransaction);
     setAmount("");
     setDescription("");

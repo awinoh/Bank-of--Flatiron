@@ -90,6 +90,13 @@
       "amount": "450",
       "date": "2022-09-26",
       "id": 13
+    },
+    {
+      "description": "films",
+      "category": "art",
+      "amount": "7650",
+      "date": "2022-09-29",
+      "id": 14
     }
   ]
 }
