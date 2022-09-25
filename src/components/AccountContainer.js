@@ -17,8 +17,20 @@ function AccountContainer() {
   }, []);
 
   const handleAddTransaction = (newTransaction) => {
-    const updatedTransactions = [...transactions, newTransaction];
-    setTransactions(updatedTransactions);
+    
+    fetch("http://localhost:8001/transactions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newTransaction),
+    })
+      .then((r) => r.json())
+      .then((newTransaction) => {
+        setTransactions([...transactions, newTransaction]);
+      }
+    );
+    
   };
     
   const handleSearch = (searchTerm) => {
