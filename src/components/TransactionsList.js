@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Transaction from "./Transaction";
 
-function TransactionsList() {
+function TransactionsList({transactions}) {
+  const [transaction,setTransactions]=useState(transactions)
+  const addTransaction = (transaction) => {
+    const newTransactions = [...transactions, transaction];
+    setTransactions(newTransactions);
+}
   return (
     <table className="ui celled striped padded table">
       <tbody>
@@ -19,7 +24,9 @@ function TransactionsList() {
             <h3 className="ui center aligned header">Amount</h3>
           </th>
         </tr>
-        {/* render a list of <Transaction> components here */}
+        {transactions && transactions.map(transaction => (
+                  <Transaction key={transaction.id} transaction={transaction} />
+              ))}
       </tbody>
     </table>
   );
