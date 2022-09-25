@@ -7,7 +7,7 @@ function Transaction({ transaction }) {
             <td>{transaction.date}</td>
             <td>{transaction.description}</td>
             <td>{transaction.category}</td>
-            <td>{transaction.transactionAmount}</td>
+            <td>{transaction.amount}</td>
        </tr>
    )
 }
